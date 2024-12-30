@@ -287,6 +287,36 @@ function calculatePersonSoulNumber(personNum) {
       </div>
       
       <div class="space-y-6">
+        <!-- Destiny Number Calculation (Moved to top) -->
+        <div class="bg-white/5 backdrop-blur rounded-xl p-5">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 flex items-center justify-center bg-violet-600 text-white text-sm rounded-full font-bold">
+                ${destinyResult.number}
+              </div>  
+              <h4 class="text-lg font-semibold text-gray-100">Число на съдбата</h4>
+              <div class="group relative">
+                <svg class="w-4 h-4 text-gray-400 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M12 21a9 9 0 100-18 9 9 0 000 18z" />
+                </svg>
+                <div class="invisible group-hover:visible absolute left-0 top-6 w-64 p-2 bg-gray-800 text-white text-sm rounded shadow-lg z-10">
+                  Сборът от всички цифри в пълната дата на раждане
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="font-mono bg-black/20 p-4 rounded-lg text-gray-100">
+            ${day}${month}${year} → ${formatCalculation(
+    `${day}${month}${year}`,
+    destinyResult.number,
+    destinyResult.number
+  )}
+          </div>
+          <div class="mt-4 text-gray-100">
+            ${destinyDescription}
+          </div>
+        </div>
+
         <!-- First Calculation -->
         <div class="bg-white/5 backdrop-blur rounded-xl p-5">
           <div class="flex items-center gap-2 mb-4">
@@ -362,36 +392,6 @@ function calculatePersonSoulNumber(personNum) {
           </div>
           <div class="mt-4 text-gray-100">
             ${personalNumberDescription}
-          </div>
-        </div>
-
-        <!-- Updated Destiny Number Calculation -->
-        <div class="bg-white/5 backdrop-blur rounded-xl p-5">
-          <div class="flex items-center gap-2 mb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-6 h-6 flex items-center justify-center bg-violet-600 text-white text-sm rounded-full font-bold">
-                ${destinyResult.number}
-              </div>  
-              <h4 class="text-lg font-semibold text-gray-100">Число на съдбата</h4>
-              <div class="group relative">
-                <svg class="w-4 h-4 text-gray-400 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M12 21a9 9 0 100-18 9 9 0 000 18z" />
-                </svg>
-                <div class="invisible group-hover:visible absolute left-0 top-6 w-64 p-2 bg-gray-800 text-white text-sm rounded shadow-lg z-10">
-                  Сборът от всички цифри в пълната дата на раждане
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="font-mono bg-black/20 p-4 rounded-lg text-gray-100">
-            ${day}${month}${year} → ${formatCalculation(
-    `${day}${month}${year}`,
-    destinyResult.number,
-    destinyResult.number
-  )}
-          </div>
-          <div class="mt-4 text-gray-100">
-            ${destinyDescription}
           </div>
         </div>
       </div>
